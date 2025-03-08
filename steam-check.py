@@ -8,9 +8,8 @@ import os
 from dotenv import load_dotenv
 import sys
 
-log_file_path = "./steam-check-log.txt"
-
-os.makedirs(os.path.dirname(log_file_path), exist_ok=True)
+script_dir = os.path.dirname(os.path.abspath(__file__))
+log_file_path = os.path.join(script_dir,"steam-check-log.txt")
 
 log_file = open(log_file_path, "a", buffering=1)
 sys.stdout = log_file
