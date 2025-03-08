@@ -80,14 +80,14 @@ def main():
             if not success: 
                 consecutive_errors += 1
                 if consecutive_errors >= 5: # If 5 errors, assume rate limit
-                    wait_time = random.randint(420,600) 
+                    wait_time = random.randint(600,900) 
                     print(f"Possible rate limit detected. Waiting {wait_time // 60} minutes before retrying...\n")
                     time.sleep(wait_time)
                     consecutive_errors = 0 # reset error count after waiting
             else:
                 consecutive_errors = 0 # reset error count if successful
         
-        wait_time = random.randint(240, 360) # waiting between 4-6 minutes
+        wait_time = random.randint(240, 540) # waiting between 4-9 minutes
         print(f"Waiting {wait_time // 60} minutes before checking again...\n")
         time.sleep(wait_time)
 
