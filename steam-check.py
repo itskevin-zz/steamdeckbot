@@ -4,9 +4,14 @@ import time
 from datetime import datetime
 import pytz
 import random
+import os 
+from dotenv import load_dotenv
+
+# Load env variables
+load_dotenv()
 
 # Discord webhook URL
-WEBHOOK_URL = 'https://discord.com/api/webhooks/1347085031926923327/Y8w9cZOmEXIwG7yC6Sto_5VZGpA-FRUpxgyIVGycc7pSIxQ2IgDJhSqPVRucpo15-PiO'
+WEBHOOK_URL = os.getenv("WEBHOOK_URL")
 
 # Steam API Endpoint
 API_URL = 'https://api.steampowered.com/IPhysicalGoodsService/CheckInventoryAvailableByPackage/v1'
