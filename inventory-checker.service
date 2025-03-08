@@ -3,10 +3,10 @@ Description=Steam Inventory Checker
 After=network.target
 
 [Service]
-ExecStart=~/Scripts/steamdeckbot/python3/venv/bin/activate ~/Scripts/steamdeckbot/steam-check.py
-WorkingDirectory=~/Scripts
-StandardOutput=append:~/Scripts/steam-check-log.txt
-StandardError=append:~/Scripts/steam-check-log.txt
+ExecStart=/home/kevin/Scripts/steamdeckbot/venv/bin/python3 /home/kevin/Scripts/steamdeckbot/steam-check.py
+WorkingDirectory=/home/kevin/Scripts/steamdeckbot
+StandardOutput=append:/home/kevin/Scripts/steamdeckbot/steam-check-log.txt
+StandardError=append:/home/kevin/Scripts/steamdeckbot/steam-check-log.txt
 Restart=always
 RestartSec=60
 User=kevin
