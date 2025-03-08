@@ -48,12 +48,12 @@ def check_inventory(package_id):
             webhook.execute()
             print(f"{PACKAGES[package_id]} available! Notification sent.")
         else:
-            message = f"🚫{PACKAGES[package_id]} not available🚫 Timestemp: {get_est_time()}"
+            """message = f"🚫{PACKAGES[package_id]} not available🚫 Timestemp: {get_est_time()}"
             webhook = DiscordWebhook(
                 url = WEBHOOK_URL,
                 content = message
             )
-            webhook.execute()
+            webhook.execute()"""
             print(f"{PACKAGES[package_id]} not available. Checking again in 10 minutes... ({get_est_time()})")
 
     except Exception as e:
