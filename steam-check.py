@@ -6,6 +6,17 @@ import pytz
 import random
 import os 
 from dotenv import load_dotenv
+import sys
+
+log_file_path = "./steam-check-log.txt"
+
+os.makedirs(os.path.dirname(log_file_path), exist_ok=True)
+
+log_file = open(log_file_path, "a", buffering=1)
+sys.stdout = log_file
+sys.stderr = log_file
+
+print("=== Steam Inventory Checker Started ===")
 
 # Load env variables
 load_dotenv()
